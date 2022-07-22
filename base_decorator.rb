@@ -1,4 +1,4 @@
-# Copyright (C) Lembani Sakala - All rights reserved. 
+# Copyright (C) Lembani Sakala - All rights reserved.
 # Unauthorized copying of this file, via any medium is strictly prohibited.
 # Proprietary and confidential.
 
@@ -8,7 +8,7 @@ class BaseDecorator < Nameable
   attr_accessor :nameable
 
   def initialize(nameable)
-    super()
+    super
     @nameable = nameable
   end
 
