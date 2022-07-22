@@ -10,7 +10,7 @@ class Person < Nameable
   attr_accessor :name, :age
 
   def initialize(age, name: 'Unknown', parent_permission: true)
-    super()
+    super
     @id = SecureRandom.uuid
     @name = name
     @age = age
