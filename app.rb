@@ -13,6 +13,7 @@ class App
   def initialize
     @people = []
     @books = []
+    @all_rentals = []
   end
 
   def menu_options
@@ -178,7 +179,8 @@ class App
     date = gets.chomp.strip
     book = @books[book_select]
     person = @people[person_select]
-    person.add_rental(date, book)
+    new_rental = Rental.new(date, book, person)
+    @all_rentals.push(new_rental)
     puts
     puts 'Rental was created successfuly!'
     puts
@@ -195,8 +197,8 @@ class App
     @people.each do |person|
       next unless person.id == entry
 
-      person.rentals.each do |rental|
-        puts "Rental date: #{rental.date} - #{rental.book.title} by #{rental.book.author}"
+      @all_rentals.each do |rental|
+        puts "Rental date: #{rental.date} - #{rental.book} by #{rental.person}"
       end
     end
   end
